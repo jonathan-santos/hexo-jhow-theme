@@ -15,15 +15,17 @@
 
     <style>
         html {
-            --primary-color: <%- config.primaryColor %>;
-            --secondary-color: <%- config.secondaryColor %>;
-            --text-light-color: <%- config.textLightColor %>;
-            --text-dark-color: <%- config.textDarkColor %>;
-            --background-color: <%- config.backgroundColor %>;
+            --primary-color: <%= theme.primaryColor %>;
+            --secondary-color: <%= theme.secondaryColor %>;
+            --text-light-color: <%= theme.textLightColor %>;
+            --text-dark-color: <%= theme.textDarkColor %>;
+            --background-light-color: <%= theme.backgroundLightColor %>;
+            --background-dark-color: <%= theme.backgroundDarkColor %>;
         }
     </style>
 </head>
 <body>
+    <% console.log(theme) %>
     <% if(!is_home()) { %>
         <a href='/' class='home-button'>
             <i class='icon-home'></i>

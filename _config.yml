@@ -1,0 +1,10 @@
+# Colors
+primaryColor: '#ff2d9a'
+secondaryColor: '#8be9fd'
+textLightColor: '#eeeeee'
+textDarkColor: '#333333'
+backgroundLightColor: '#eeeeee'
+backgroundDarkColor: '#1a2a3a'
+
+# Images
+logo: /img/logo.png
