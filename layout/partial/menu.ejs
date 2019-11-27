@@ -17,7 +17,7 @@
             <li class='link'>
                 <a href='/' class='first-link <%- is_home() && 'selected' %>'>
                     <i class="icon-home"></i>
-                    Home
+                    <%= __('home') %>
                 </a>
             </li>
 
@@ -36,7 +36,7 @@
             </li>
 
             <li class='link-group'>
-                <i class="icon-down"></i> Categorias
+                <i class="icon-down"></i> <%= __('categories') %>
             </li>
 
             <% site.categories.each(function(category, i) { %>
