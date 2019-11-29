@@ -1,7 +1,7 @@
 <main class='post'>
-    <div class='area-title'>
+    <div class='area-title <%- page.synopsis == null && "min" %>'>
         <h1 id='title' class='title'><%- page.title %></h1>
-
+        
         <p class='description'><%- page.synopsis %></p>
     </div>
 
