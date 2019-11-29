@@ -88,6 +88,7 @@ main {
         height: 100%;
         left: 10%;
         float: right;
+        border-left: 1px solid var(--text-light-color);
         background-color: var(--background-dark-color);
         color: var(--text-light-color);
     }
@@ -316,6 +317,24 @@ footer {
     .posts {
         padding: 0.5rem 5%;
     }
+}
+
+@media (min-width: 600px) {
+  #input-menu:checked ~ main, #input-menu:checked ~ footer {
+    width: calc(100% - 32.5vw);
+  }
+
+  #input-menu:checked ~ .menu {
+    width: 32.5vw;
+  }
+
+    #input-menu:checked ~ .menu .menu-close {
+      display: none;
+    }
+  
+  .menu nav {
+    width: 100%;
+  }
 }
 
 /* #endregion */
