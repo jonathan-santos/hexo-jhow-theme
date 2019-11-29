@@ -208,6 +208,13 @@ footer {
   footer p {
     margin: 0;
   }
+
+  footer .back-to-top {
+    border: 2px solid var(--text-light-color);
+    padding: 0.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+  }
 /* #endregion */
 
 /* #region posts */

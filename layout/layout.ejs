@@ -11,7 +11,7 @@
         <% } %>
     </title>
 
-    <link rel='stylesheet' href='/layout.css'>
+    <link rel='stylesheet' href='<%- url_for("/layout.css") %>'>
 
     <style>
         html {
@@ -41,6 +41,10 @@
         <% if(!config.notShowRepo && config.repo != null) { %>
             <p><%= __('curiosityOfHowWasMade') %> <a href='<%- config.repo %>' target="_blank"><%= __('accessRepo') %></a></p>
         <% } %>
+
+        <a href='#title' class='back-to-top'>
+            <%= __('backToTop') %>
+        </a>
     </footer>
 </body>
 </html>
