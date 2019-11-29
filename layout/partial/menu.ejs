@@ -1,8 +1,9 @@
+<input id='input-menu' type='checkbox' hidden />
+
 <label for='input-menu' role='button' aria-label='Menu' class='menu-button'>
     <i class='icon-menu'></i>
+    <i class='icon-close'></i>
 </label>
-
-<input id='input-menu' type='checkbox' hidden />
 
 <header class='menu'>
     <label for='input-menu' class='menu-close' tabindex='-1' aria-hidden='true'></label>
@@ -15,21 +16,21 @@
         </div>
         <ul>
             <li class='link'>
-                <a href='/' class='first-link <%- is_home() && 'selected' %>'>
+                <a href='/' class='first-link <%- is_home() && "selected" %>'>
                     <i class="icon-home"></i>
                     <%= __('home') %>
                 </a>
             </li>
 
             <li class='link'>
-                <a href='/faq.html' class='<%- page.title == 'faq' && 'selected' %>'>
+                <a href='/faq.html' class='<%- page.title == "faq" && "selected" %>'>
                     <i class="icon-faq"></i>
                     FAQ
                 </a>
             </li>
             
             <li class='link'>
-                <a href='/tags.html' class='<%- page.title == 'tags' && 'selected' %>'>
+                <a href='/tags.html' class='<%- page.title == "tags" && "selected" %>'>
                     <i class="icon-tags"></i>
                     Tags
                 </a>
@@ -41,7 +42,7 @@
 
             <% site.categories.each(function(category, i) { %>
                 <li class='link category'>
-                    <a href='<%- url_for(category.path) %>' class='<%- page.category == category.name && 'selected' %>'>
+                    <a href='<%- url_for(category.path) %>' class='<%- page.category == category.name && "selected" %>'>
                         <i class="icon-blog"></i>
                         <%- titlecase(category.name) %>
                     </a>
