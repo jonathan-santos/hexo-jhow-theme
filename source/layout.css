@@ -24,6 +24,10 @@ main {
     padding-bottom: 10rem;
 }
 
+hr {
+  border-top: 1px solid var(--text-dark-color);
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
@@ -405,9 +409,14 @@ footer {
     overflow: hidden;
 }
 
-.content img {
-    max-width: 100%;
-}
+  .content img {
+      max-width: 100%;
+  }
+
+  .content > h2 {
+    margin: 0.5rem 0;
+    font-size: 1.85rem;
+  }
 /* #endregion */
 
 /* #region tags */

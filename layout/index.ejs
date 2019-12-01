@@ -6,6 +6,23 @@
     </div>
 
     <div class="content">
-        <%- partial('partial/posts', { posts: site.posts }) %>
+        <% if(!theme.wikiMode) { %>
+
+            <%- partial('partial/posts', { posts: site.posts }) %>
+
+        <% } else { %>
+            
+            <% site.categories.each(function(category, i) { %>
+                <h2><%- titlecase(category.name) %></h2>
+
+                <%- partial('partial/wikiPostsLine', { posts: category.posts }) %>
+
+                <% if(i < site.categories.length - 1) { %>
+                    <hr>
+                <% } %>
+
+            <% }) %>
+
+        <% } %>
     </div>
 </main>
