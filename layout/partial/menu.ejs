@@ -13,6 +13,8 @@
             <div class='logo'>
                 <img src='<%- url_for(theme.logo) %>'>
             </div>
+
+            <p class='title'><%- config.title %></p>
         </div>
         <ul>
             <li class='link'>
@@ -22,13 +24,15 @@
                 </a>
             </li>
 
-            <li class='link'>
-                <a href='/faq.html' class='<%- page.title == "faq" && "selected" %>'>
-                    <i class="icon-faq"></i>
-                    FAQ
-                </a>
-            </li>
-            
+            <% if(!theme.noFaq) { %>
+                <li class='link'>
+                    <a href='/faq.html' class='<%- page.title == "faq" && "selected" %>'>
+                        <i class="icon-faq"></i>
+                        FAQ
+                    </a>
+                </li>
+            <% } %>
+
             <li class='link'>
                 <a href='/tags.html' class='<%- page.title == "tags" && "selected" %>'>
                     <i class="icon-tags"></i>
@@ -37,7 +41,7 @@
             </li>
 
             <li class='link-group'>
-                <i class="icon-down"></i> <%= __('categories') %>
+                <i class="icon-down"></i> <%- titlecase(__('categories')) %>
             </li>
 
             <% site.categories.each(function(category, i) { %>

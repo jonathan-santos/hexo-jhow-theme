@@ -1,6 +1,10 @@
+## Configuration
+wikiMode: true
+noFaq: true
+
 # Colors
-primaryColor: '#ff2d9a'
-secondaryColor: '#8be9fd'
+primaryColor: '#8be9fd'
+secondaryColor: '#ff2d9a'
 textLightColor: '#eeeeee'
 textDarkColor: '#333333'
 backgroundLightColor: '#eeeeee'

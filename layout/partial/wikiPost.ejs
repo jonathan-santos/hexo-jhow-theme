@@ -1,0 +1,13 @@
+<a href='<% link_to(post.path) %>' class='wiki-post'>
+    <span class='title'><%- post.title %></span>
+
+    <span class='date'><%- date(post.date, config.date_format) %></span>
+
+    <p class='category'><%- post.categories.first().name %></p>
+
+    <div class='tags'>
+        <% post.tags.each(function(tag, i) { %>
+            <span href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
+        <% }) %>
+    </div>
+</a>
