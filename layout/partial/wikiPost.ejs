@@ -1,4 +1,4 @@
-<a href='<% link_to(post.path) %>' class='wiki-post'>
+<a href='<%- url_for(post.path) %>' class='wiki-post'>
     <span class='title'><%- post.title %></span>
 
     <span class='date'><%- date(post.date, config.date_format) %></span>

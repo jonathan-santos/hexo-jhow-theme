@@ -29,13 +29,13 @@ hr {
 }
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 0.35rem;
+  height: 0.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.01);
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 25px;
+  border-radius: 5px;
   background-color: var(--primary-color)
 }
 /* #endregion */
@@ -124,7 +124,7 @@ hr {
             width: 10rem;
             height: 10rem;
             line-height: 18rem;
-            background-color: #d77bba;
+            background-color: var(--primary-color);
         }
 
             .menu .logo img {
@@ -168,6 +168,7 @@ hr {
             font-size: 1.3rem;
             line-height: 2.5rem;
             text-decoration: none;
+            text-shadow: 1px 1px var(--background-dark-color);
         }
 
             .menu .link i {
@@ -375,11 +376,6 @@ footer {
       visibility: hidden;
     }
 
-      .wiki-post .tags::-webkit-scrollbar {
-        height: 0.25rem;
-        border: none;
-      }
-
       .wiki-post .tags::-webkit-scrollbar-thumb {
         background-color: var(--secondary-color);
         width: 10%;
@@ -407,6 +403,7 @@ footer {
     border-top: 1px solid #000;
     padding: 0.5rem 2rem;
     overflow: hidden;
+    line-height: 1.35rem;
 }
 
   .content img {
@@ -459,7 +456,8 @@ footer {
   }
 
   #input-menu:checked ~ .menu {
-    width: 32.5vw;
+    min-width: 32.5vw;
+    width: 30%;
   }
 
     #input-menu:checked ~ .menu .menu-close {
@@ -581,8 +579,9 @@ footer {
   font-family: Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .content code {
-  background: var(--text-light-color);
-  text-shadow: 0 1px #fff;
+  background-color: var(--background-dark-color);
+  border-radius: 5px;
+  color: var(--primary-color);
   padding: 0 0.3em;
 }
 .content pre code {

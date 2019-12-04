@@ -3,6 +3,16 @@
         <h1 id='title' class='title'><%- page.title %></h1>
         
         <p class='description'><%- page.synopsis %></p>
+
+        <!-- <span class='date'><%- date(page.date, config.date_format) %></span>
+
+        <a href='<%- url_for(page.categories.first().path) %>'><%- page.categories.first().name %></a>
+
+        <div class='tags'>
+            <% page.tags.each(function(tag, i) { %>
+                <a href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
+            <% }) %>
+        </div> -->
     </div>
 
     <div class='content'>
