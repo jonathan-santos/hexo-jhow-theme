@@ -111,7 +111,7 @@ hr {
         .menu .area-logo {
             box-sizing: border-box;
             width: 100%;
-            height: 15rem;
+            min-height: 15rem;
             margin-bottom: 0.5rem;
             padding: 1rem;
         }
@@ -318,7 +318,7 @@ footer {
 
 /* #region posts */
 .blog-posts {
-    padding: 0.5rem 20%;
+    padding: 0.5rem 10%;
 }
 
 .wiki-posts {
