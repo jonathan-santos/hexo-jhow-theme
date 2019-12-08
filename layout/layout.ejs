@@ -25,6 +25,8 @@
     </style>
 </head>
 <body>
+    <a name="top" aria-hidden="true"></a>
+
     <% if(!is_home()) { %>
         <a href='<%- url_for("/") %>' class='home-button'>
             <i class='icon-home'></i>
@@ -39,10 +41,10 @@
         <p><%- config.footerText || __('footerText') %></p>
 
         <% if(!config.notShowRepo && config.repo != null) { %>
-            <p><%= __('curiosityOfHowWasMade') %> <a href='<%- config.repo %>' target="_blank"><%= __('accessRepo') %></a></p>
+            <p><%= __('curiosityOfHowWasMade') %> <a href='<%- url_for(config.repo) %>' target="_blank"><%= __('accessRepo') %></a></p>
         <% } %>
 
-        <a href='#title' class='back-to-top'>
+        <a href='#top' class='back-to-top'>
             <%= __('backToTop') %> <i class="icon-up"></i>
         </a>
     </footer>
