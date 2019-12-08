@@ -3,18 +3,33 @@
         <h1 id='title' class='title'><%- page.title %></h1>
         
         <p class='description'><%- page.synopsis %></p>
+        
+        <div class="details">
+            <div class="inner-details">
+                <div class='group'>
+                    <span class="info">Data: </span>
 
-        <!-- <span class='date'><%- date(page.date, config.date_format) %></span>
+                    <span class='date'><%- date(page.date, config.date_format) %></span>
+                </div>
+                <div class='group'>
+                    <span class="info">Categoria: </span>
+                    
+                    <a class='category' href='<%- url_for(page.categories.first().path) %>'>
+                        <%- page.categories.first().name %>
+                    </a>
+                </div>
+            </div>
 
-        <a href='<%- url_for(page.categories.first().path) %>'><%- page.categories.first().name %></a>
+            <div class='tags'>
+                <span class='info'>Tags:</span>
+                <% page.tags.each(function(tag, i) { %>
+                    <a href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
+                <% }) %>
+            </div>
+        </div>
 
-        <div class='tags'>
-            <% page.tags.each(function(tag, i) { %>
-                <a href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
-            <% }) %>
-        </div> -->
     </div>
-
+    
     <div class='content'>
         <%- page.content %>
     </div>

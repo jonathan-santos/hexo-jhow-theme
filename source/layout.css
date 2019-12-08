@@ -99,7 +99,7 @@ hr {
     }
 
     .menu nav  {
-        width: 90%;
+        width: calc(90% - 1px);
         height: 100%;
         left: 10%;
         float: right;
@@ -168,7 +168,7 @@ hr {
             font-size: 1.3rem;
             line-height: 2.5rem;
             text-decoration: none;
-            text-shadow: 1px 1px var(--background-dark-color);
+            text-shadow: 1px 1px 1px var(--background-dark-color);
         }
 
             .menu .link i {
@@ -203,7 +203,7 @@ hr {
 }
 /* #endregion */
 
-/* #region title */
+/* #region area-title */
 .area-title {
     min-height: 10rem;
     padding: 1.5rem 2rem 1rem 2rem;
@@ -222,6 +222,67 @@ hr {
     .area-title .description {
         font-size: 1.3rem;
     }
+
+    .area-title .details {
+      margin: 2rem 0 0 0;
+      border-top: 1px solid var(--background-dark-color);
+      padding: 1rem 0 0 0;
+      display: flex;
+      justify-content: center;
+    }
+
+      .area-title .inner-details {
+        margin-right: 1.15rem;
+        border-right: 1px solid var(--background-dark-color);
+        padding: 0.5rem 1.15rem 0.5rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: start;
+      }
+
+        .area-title .inner-details .group {
+          width: 12rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+      .area-title .info {
+        margin-right: 0.35rem;
+      }
+
+      .area-title .date {
+        margin: 0 0.5rem 0.5rem 0;
+      }
+
+      .area-title .category {
+        float: right;
+        padding: 0.2rem 2.5rem;
+        text-align: center;
+        background-color: var(--primary-color);
+        color: var(--text-dark-color);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .area-title .tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+      }
+
+        .area-title .tag {
+          height: 1.2rem;
+          margin: 0 0.25rem 0.25rem 0;
+          padding: 0.225rem;
+          border-radius: 10px;
+          flex: 1;
+          background-color: var(--primary-color);
+          font-size: 0.9rem;
+          text-align: center;
+        }
 /* #endregion */
 
 /* #region footer */
@@ -411,8 +472,9 @@ footer {
   }
 
   .content > h2 {
-    margin: 0.5rem 0;
+    margin: 2rem 0 0.5rem 0;
     font-size: 1.85rem;
+    line-height: initial;
   }
 /* #endregion */
 
@@ -436,6 +498,10 @@ footer {
 
 /* #region Media Queries */
 @media (max-width: 420px) {
+    main {
+      padding-bottom: 15rem;
+    }
+
     .area-title .title {
         font-size: 2.2rem;
         padding-bottom: 0.5rem;
@@ -445,12 +511,43 @@ footer {
         font-size: 1.1rem;
     }
 
+    .area-title .details {
+      padding-top: 0.5rem;
+      flex-direction: column;
+    }
+
+      .area-title .inner-details {
+        margin-bottom: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--background-dark-color);
+        padding-bottom: 1rem;
+        padding-right: 0.5rem;
+      }
+
+        .area-title .inner-details .group {
+          width: 100%;
+        }
+
     .posts {
         padding: 0.5rem 5%;
+    }
+
+    footer {
+      min-height: 15rem;
     }
 }
 
 @media (min-width: 600px) {
+  main .content {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .wiki-posts-line {
+    margin-left: -15%;
+    margin-right: -15%;
+  }
+
   #input-menu:checked ~ main, #input-menu:checked ~ footer {
     width: calc(100% - 32.5vw);
   }
@@ -531,6 +628,7 @@ footer {
 }
 .icon-heart:before {
   content: "\f004";
+  color: rgb(230,0,0);
 }
 .icon-about:before {
   content: "\f007";
@@ -559,7 +657,7 @@ footer {
 .content pre,
 .content .highlight {
   background: var(--background-dark-color);
-  margin: 0 -2rem;
+  margin: 0.5rem -2rem;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
