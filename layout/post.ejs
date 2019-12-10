@@ -1,6 +1,14 @@
 <main class='post'>
     <div class='area-title <%- page.synopsis == null && "min" %>'>
-        <h1 id='title' class='title'><%- page.title %></h1>
+        <h1 id='title' class='title'>
+            <%- page.title %>
+
+            <% if(page.part) { %>
+                - <%- __('part') %> <%- page.part %>
+            <% } %>
+        </h1>
+
+        <br>
         
         <p class='description'><%- page.synopsis %></p>
         
@@ -11,13 +19,16 @@
 
                     <span class='date'><%- date(page.date, config.date_format) %></span>
                 </div>
-                <div class='group'>
-                    <span class="info">Categoria: </span>
-                    
-                    <a class='category' href='<%- url_for(page.categories.first().path) %>'>
-                        <%- page.categories.first().name %>
-                    </a>
-                </div>
+
+                <% if(page.categories.length > 0) { %>
+                    <div class='group'>
+                        <span class="info">Categoria: </span>
+                        
+                        <a class='category' href='<%- url_for(page.categories.first().path) %>'>
+                            <%- page.categories.first().name %>
+                        </a>
+                    </div>
+                <% } %>
             </div>
 
             <div class='tags'>
@@ -31,6 +42,35 @@
     </div>
     
     <div class='content'>
+
+        <% if(page.numberOfParts) { %>
+            <%- partial('partial/tableOfContents') %>
+        <% } %>
+
         <%- page.content %>
+
+        <% if(page.postMusicLink) { %>
+            <div class='post-music'>
+                <h3><i class='icon-music'></i> <%- __('postMusic') %></h3>
+
+                <p><%- page.postMusicText %></p>
+
+                <a href='<%- page.postMusicLink %>' target='_blank'><%- __('hearIt')... %></a>
+            </div>
+        <% } %>
+
+        <% if(page.part && page.numberOfParts) { %>
+            <hr>
+            
+            <div class='buttons'>
+                <% if(Number(page.part) > 1) { %>
+                    <a class='previous' href='../<%= page.part - 1 %>'><%- __('previous') %></a>
+                <% } %>
+        
+                <% if(Number(page.part) < Number(page.numberOfParts)) { %>
+                    <a class='next' href='../<%= page.part + 1 %>'><%- __('next') %></a>
+                <% } %>
+            </div>
+        <% } %>
     </div>
 </main>

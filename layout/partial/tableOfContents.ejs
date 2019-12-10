@@ -1,0 +1,15 @@
+<h2><%- __('tableOfContents') %></h2>
+
+<ul class='parts'>
+    <% Array(page.numberOfParts).fill(0).forEach(function(part, i) { %>
+        <% i++ %>
+
+        <li>
+            <% if(i != page.part) { %>
+                <a href='../<%- i %>'><%- __('part') %> <%- i %></a>
+            <% } else { %>
+                <span><%- __('part') %> <%- i %></span>
+            <% } %>
+        </li>
+    <% }) %>
+</ul>

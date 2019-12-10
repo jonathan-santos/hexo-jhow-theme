@@ -1,5 +1,5 @@
 <div class='wiki-posts-line'>
-    <% posts.each(function(post, i) { %>
+    <% posts.filter(post => post.indexable != false).each(function(post, i) { %>
         <%- partial('partial/wikiPost', { post: post }) %>
     <% }) %>
 </div>
