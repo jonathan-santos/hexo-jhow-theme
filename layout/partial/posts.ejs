@@ -1,5 +1,5 @@
-<div class='<%- !theme.wikiMode ? "blog-posts" : "wiki-posts" %>'>
-    <% posts.filter(post => post.indexable != false).each(function(post, i) { %>
+<div class='<%- !theme.wikiMode ? 'blog-posts' : 'wiki-posts' %>'>
+    <% posts.filter(post => post.indexable != false).each(post => { %>
 
         <% if(!theme.wikiMode) { %>
             <%- partial('partial/blogPost', { post: post }) %>

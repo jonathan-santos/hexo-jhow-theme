@@ -6,7 +6,7 @@
     <p class='category'><%- post.categories.first().name %></p>
 
     <div class='tags'>
-        <% post.tags.each(function(tag, i) { %>
+        <% post.tags.each(tag => { %>
             <span href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
         <% }) %>
     </div>

@@ -1,6 +1,6 @@
 <main class='post'>
-    <div class='area-title <%- page.synopsis == null && "min" %>'>
-        <h1 id='title' class='title'>
+    <div class='area-title <%- page.synopsis == null && 'min' %>'>
+        <h1 class='title'>
             <%- page.title %>
 
             <% if(page.part) { %>
@@ -12,17 +12,17 @@
         
         <p class='description'><%- page.synopsis %></p>
         
-        <div class="details">
-            <div class="inner-details">
+        <div class='details'>
+            <div class='inner-details'>
                 <div class='group'>
-                    <span class="info">Data: </span>
+                    <span class='info'>Data: </span>
 
                     <span class='date'><%- date(page.date, config.date_format) %></span>
                 </div>
 
                 <% if(page.categories.length > 0) { %>
                     <div class='group'>
-                        <span class="info">Categoria: </span>
+                        <span class='info'>Categoria: </span>
                         
                         <a class='category' href='<%- url_for(page.categories.first().path) %>'>
                             <%- page.categories.first().name %>
@@ -33,7 +33,7 @@
 
             <div class='tags'>
                 <span class='info'>Tags:</span>
-                <% page.tags.each(function(tag, i) { %>
+                <% page.tags.each(tag => { %>
                     <a href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
                 <% }) %>
             </div>

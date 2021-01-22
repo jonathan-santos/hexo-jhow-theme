@@ -11,10 +11,10 @@
         <% } %>
     </title>
 
-    <link rel='stylesheet' href='<%- url_for("/layout.css") %>'>
+    <link rel='stylesheet' href='<%- url_for('/layout.css') %>'>
 
     <style>
-        html {
+        :root {
             --primary-color: <%= theme.primaryColor %>;
             --secondary-color: <%= theme.secondaryColor %>;
             --text-light-color: <%= theme.textLightColor %>;
@@ -24,11 +24,12 @@
         }
     </style>
 </head>
+
 <body>
-    <a name="top" aria-hidden="true"></a>
+    <a name='top' aria-hidden='true'></a>
 
     <% if(!is_home()) { %>
-        <a href='<%- url_for("/") %>' class='home-button'>
+        <a href='<%- url_for('/') %>' class='home-button'>
             <i class='icon-home'></i>
         </a>
     <% } %>
@@ -41,11 +42,11 @@
         <p><%- config.footerText || __('footerText') %></p>
 
         <% if(!config.notShowRepo && config.repo != null) { %>
-            <p><%= __('curiosityOfHowWasMade') %> <a href='<%- url_for(config.repo) %>' target="_blank"><%= __('accessRepo') %></a></p>
+            <p><%= __('curiosityOfHowWasMade') %> <a href='<%- url_for(config.repo) %>' target='_blank'><%= __('accessRepo') %></a></p>
         <% } %>
 
         <a href='#top' class='back-to-top'>
-            <%= __('backToTop') %> <i class="icon-up"></i>
+            <%= __('backToTop') %> <i class='icon-up'></i>
         </a>
     </footer>
 </body>

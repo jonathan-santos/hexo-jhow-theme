@@ -1,18 +1,18 @@
 <main class='index'>
     <div class='area-title'>
-        <h1 id='title' class='title'><%- config.title %></h1>
+        <h1 class='title'><%- config.title %></h1>
 
         <p class='description'><%- config.description %></p>
     </div>
 
-    <div class="content">
+    <div class='content'>
         <% if(!theme.wikiMode) { %>
 
             <%- partial('partial/posts', { posts: site.posts }) %>
 
         <% } else { %>
             
-            <% site.categories.each(function(category, i) { %>
+            <% site.categories.each((category, i) => { %>
                 <h2><%- titlecase(category.name) %></h2>
 
                 <%- partial('partial/wikiPostsLine', { posts: category.posts }) %>

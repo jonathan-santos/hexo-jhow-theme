@@ -1,7 +1,7 @@
 <div class='blog-post'>
     <div class='details'>
         <div class='tags'>
-            <% post.tags.each(function(tag, i) { %>
+            <% post.tags.each(tag => { %>
                 <a href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
             <% }) %>
         </div>
