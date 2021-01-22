@@ -612,11 +612,11 @@ footer {
 /* #region icomoon */
 @font-face {
   font-family: 'icomoon';
-  src:  url('icomoon/fonts/icomoon.eot?a3zlv3');
-  src:  url('icomoon/fonts/icomoon.eot?a3zlv3#iefix') format('embedded-opentype'),
-    url('icomoon/fonts/icomoon.ttf?a3zlv3') format('truetype'),
-    url('icomoon/fonts/icomoon.woff?a3zlv3') format('woff'),
-    url('icomoon/fonts/icomoon.svg?a3zlv3#icomoon') format('svg');
+  src:  url('icomoon/fonts.eot?a3zlv3');
+  src:  url('icomoon/fonts.eot?a3zlv3#iefix') format('embedded-opentype'),
+    url('icomoon/fonts.ttf?a3zlv3') format('truetype'),
+    url('icomoon/fonts.woff?a3zlv3') format('woff'),
+    url('icomoon/fonts.svg?a3zlv3#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
