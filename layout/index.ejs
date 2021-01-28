@@ -9,7 +9,7 @@
         <% if(!theme.wikiMode) { %>
             <%- partial('partial/posts', { posts: site.posts }) %>
         <% } else { %>
-            <% site.categories.each(category => { %>
+            <% site.categories.sort('name').each(category => { %>
                 <%- partial('partial/wikiPostsCategory', { category }) %>
             <% }) %>
         <% } %>
