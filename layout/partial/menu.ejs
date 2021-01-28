@@ -1,14 +1,14 @@
-<input id='input-menu' type='checkbox' hidden />
+<input id='menu' type='checkbox' hidden aria-hidden='true' tabindex='-1' />
 
-<label for='input-menu' role='button' aria-label='Menu' class='menu-button'>
+<label for='menu' class='menu-button' aria-hidden='true' tabindex='-1'>
     <i class='icon-menu'></i>
     <i class='icon-close'></i>
 </label>
 
 <header class='menu'>
-    <label for='input-menu' class='menu-close' tabindex='-1' aria-hidden='true'></label>
+    <label for='menu' class='backdrop' aria-hidden='true' tabindex='-1'></label>
 
-    <nav role='navigation'>
+    <nav class='content'>
         <div class='area-logo' aria-hidden='true'>
             <div class='logo'>
                 <img src='<%- url_for(theme.logo) %>'>
@@ -16,43 +16,45 @@
 
             <p class='title'><%- config.title %></p>
         </div>
+
         <ul>
-            <li class='link'>
-                <a href='<%- url_for('/') %>' class='first-link <%- is_home() && 'selected' %>'>
+            <li>
+                <a href='<%- url_for('/') %>' class='link <%- is_home() && 'selected' %>'>
                     <i class='icon-home'></i>
                     <%= __('home') %>
                 </a>
             </li>
 
             <% if(!theme.noFaq) { %>
-                <li class='link'>
-                    <a href='/faq.html' class='<%- page.title == 'faq' && 'selected' %>'>
+                <li>
+                    <a href='/faq.html' class='link <%- page.title == 'faq' && 'selected' %>'>
                         <i class='icon-faq'></i>
                         FAQ
                     </a>
                 </li>
             <% } %>
 
-            <li class='link'>
-                <a href='/tags.html' class='<%- page.title == 'tags' && 'selected' %>'>
+            <li>
+                <a href='/tags.html' class='link <%- page.title == 'tags' && 'selected' %>'>
                     <i class='icon-tags'></i>
                     Tags
                 </a>
             </li>
 
-            <li class='link-group'>
-                <i class='icon-down'></i> <%- titlecase(__('categories')) %>
-            </li>
+            <input id='categories' type='checkbox' hidden aria-hidden='true' tabindex='-1' checked />
+
+            <label for='categories' aria-label='Menu' class='link' aria-hidden='true' tabindex='-1'>
+                <i class='icon-down'></i> <%- __('categories') %>
+            </label>
 
             <% site.categories.each(category => { %>
-                <li class='link category'>
-                    <a href='<%- url_for(category.path) %>' class='<%- page.category == category.name && 'selected' %>'>
+                <li class='categories-item'>
+                    <a href='<%- url_for(category.path) %>' class='link group <%- page.category == category.name && 'selected' %>'>
                         <i class='icon-blog'></i>
                         <%- titlecase(category.name) %>
                     </a>
                 </li>
             <% }) %>
-            
         </ul>
     </nav>
 </header>

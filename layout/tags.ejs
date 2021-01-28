@@ -1,13 +1,15 @@
-<main class='tags'>
+<main>
     <div class='area-title min'>
         <h1 class='title'>Tags</h1>
     </div>
 
-    <div class='content'>
-        <% site.tags.each(tag => { %>
-            <a href='<%- url_for(tag.path) %>' class='tag'>
-                <%- tag.name %>
-            </a>
-        <% }) %>
+    <div class='main-content'>
+        <div class='blog-tags'>
+            <% site.tags.each(tag => { %>
+                <a href='<%- url_for(tag.path) %>' class='post-tag'>
+                    <%- titlecase(tag.name) %>
+                </a>
+            <% }) %>
+        </div>
     </div>
 </main>

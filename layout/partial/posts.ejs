@@ -2,9 +2,9 @@
     <% posts.filter(post => post.indexable != false).each(post => { %>
 
         <% if(!theme.wikiMode) { %>
-            <%- partial('partial/blogPost', { post: post }) %>
+            <%- partial('partial/blogPost', { post }) %>
         <% } else { %>
-            <%- partial('partial/wikiPost', { post: post }) %>
+            <%- partial('partial/wikiPost', { post }) %>
         <% } %>
 
     <% }) %>

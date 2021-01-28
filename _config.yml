@@ -3,12 +3,12 @@ wikiMode: false
 noFaq: true
 
 # Colors
-primaryColor: '#8be9fd'
-secondaryColor: '#ff2d9a'
-textLightColor: '#eeeeee'
+primaryColor: '#8BE9FD'
+secondaryColor: '#FF2D9A'
+textLightColor: '#FFFFFF'
 textDarkColor: '#333333'
-backgroundLightColor: '#eeeeee'
-backgroundDarkColor: '#1a2a3a'
+backgroundLightColor: '#FFFFFF'
+backgroundDarkColor: '#1A2A3A'
 
 # Images
 logo: /img/logo.png

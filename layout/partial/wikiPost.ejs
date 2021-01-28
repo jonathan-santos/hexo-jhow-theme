@@ -1,13 +1,9 @@
-<a href='<%- url_for(post.path) %>' class='wiki-post'>
-    <span class='title'><%- post.title %></span>
+<div class='wiki-post'>
+    <a href='<%- url_for(post.path) %>' class='link'><%- post.title %></a>
 
-    <span class='date'><%- date(post.date, config.date_format) %></span>
-
-    <p class='category'><%- post.categories.first().name %></p>
-
-    <div class='tags'>
+    <div class='details-bottom'>
         <% post.tags.each(tag => { %>
-            <span href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
+            <a href='<%- url_for(tag.path) %>' class='post-tag'><%- titlecase(tag.name) %></a>
         <% }) %>
     </div>
-</a>
+</div>

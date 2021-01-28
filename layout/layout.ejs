@@ -15,18 +15,18 @@
 
     <style>
         :root {
-            --primary-color: <%= theme.primaryColor %>;
-            --secondary-color: <%= theme.secondaryColor %>;
-            --text-light-color: <%= theme.textLightColor %>;
-            --text-dark-color: <%= theme.textDarkColor %>;
-            --background-light-color: <%= theme.backgroundLightColor %>;
-            --background-dark-color: <%= theme.backgroundDarkColor %>;
+            --color-primary: <%= theme.primaryColor %>;
+            --color-secondary: <%= theme.secondaryColor %>;
+            --color-text-light: <%= theme.textLightColor %>;
+            --color-text-dark: <%= theme.textDarkColor %>;
+            --color-background-light: <%= theme.backgroundLightColor %>;
+            --color-background-dark: <%= theme.backgroundDarkColor %>;
         }
     </style>
 </head>
 
 <body>
-    <a name='top' aria-hidden='true'></a>
+    <span id='top'></span>
 
     <% if(!is_home()) { %>
         <a href='<%- url_for('/') %>' class='home-button'>
@@ -42,7 +42,7 @@
         <p><%- config.footerText || __('footerText') %></p>
 
         <% if(!config.notShowRepo && config.repo != null) { %>
-            <p><%= __('curiosityOfHowWasMade') %> <a href='<%- url_for(config.repo) %>' target='_blank'><%= __('accessRepo') %></a></p>
+            <p><%= __('curiosityOfHowWasMade') %> <br> <a href='<%- url_for(config.repo) %>' target='_blank' rel='noreferrer'><%= __('accessRepo') %></a></p>
         <% } %>
 
         <a href='#top' class='back-to-top'>

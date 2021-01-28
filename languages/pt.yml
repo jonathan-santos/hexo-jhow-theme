@@ -1,12 +1,12 @@
-home: início
-categories: categorias
+home: Início
+categories: Categorias
 footerText: Blog feito com HTML, CSS, <a href='https://hexo.io' target='_blank'>Hexo</a>, <i class="icon-heart"></i> e café
 curiosityOfHowWasMade: Curiosidade de como esse blog foi feito? 
 accessRepo: Acesse seu repositório
 backToTop: Voltar ao topo
-part: parte
-tableOfContents: Indice
-next: próxima
-previous: anterior
+part: Parte
+tableOfContents: Índice
+next: Próxima
+previous: Anterior
 postMusic: Música do Post
 hearIt: Escute ela

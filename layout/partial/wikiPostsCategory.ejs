@@ -1,0 +1,13 @@
+<div class='wiki-posts-category'>
+    <h2 class='title'>
+        Category: <a class='post-category' href='<%- url_for(category.path) %>'><%- titlecase(category.name) %></a>
+    </h2>
+
+    <div class='posts-line'>
+        <% category.posts.filter(post => post.indexable != false).each(post => { %>
+            <%- partial('partial/wikiPost', { post }) %>
+        <% }) %>
+
+        <div class='whitespace'></div>
+    </div>
+</div>

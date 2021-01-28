@@ -1,19 +1,23 @@
-<div class='blog-post'>
-    <div class='details'>
-        <div class='tags'>
-            <% post.tags.each(tag => { %>
-                <a href='<%- url_for(tag.path) %>' class='tag no-underline'><%- tag.name %></span>
-            <% }) %>
-        </div>
+<div class='blog-post' class='link'>
+    <div class='details-top'>
+        <a class='post-category' href='<%- url_for(post.categories.first().path) %>'><%- titlecase(post.categories.first().name) %></a>
 
         <span class='date'><%- date(post.date, config.date_format) %></span>
     </div>
-    
-    <a href='<%- url_for(post.path) %>' class='no-underline'>
+        
+    <a href='<%- url_for(post.path) %>' class='link'>
         <h2 class='title'><%- post.title %></h2>
 
         <% if (post.synopsis) { %>
-            <p class='synopsis'><%- post.synopsis %>...</p>
+            <p class='synopsis'><%- post.synopsis %></p>
         <% } %>
     </a>
+
+    <div class='details-bottom'>
+        <span class='info'>Tags: </span>
+        
+        <% post.tags.each(tag => { %>
+            <a href='<%- url_for(tag.path) %>' class='post-tag'><%- titlecase(tag.name) %></a>
+        <% }) %>
+    </div>
 </div>
