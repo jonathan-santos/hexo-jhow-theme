@@ -689,11 +689,11 @@ footer .back-to-top {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-language:before {
+	content: "\e900";
+}
 .icon-faq:before {
 	content: "\f128";
-}
-.icon-email:before {
-	content: "\f003";
 }
 .icon-close:before {
 	content: "\f00d";
@@ -704,44 +704,20 @@ footer .back-to-top {
 .icon-tags:before {
 	content: "\f02c";
 }
-.icon-down:before {
-	content: "\f0d7";
-}
-.icon-up:before {
+.icon-arrow:before {
 	content: "\f0d8";
-}
-.icon-code:before {
-	content: "\f121";
-}
-.icon-archive:before {
-	content: "\f187";
-}
-.icon-art:before {
-	content: "\f1fc";
 }
 .icon-heart:before {
 	content: "\f004";
 	color: rgb(230,0,0);
 }
-.icon-about:before {
-	content: "\f007";
-}
 .icon-home:before {
 	content: "\f015";
-}
-.icon-twitter:before {
-	content: "\f099";
 }
 .icon-menu:before {
 	content: "\f0c9";
 }
-.icon-github:before {
-	content: "\f113";
-}
-.icon-games:before {
-	content: "\f11b";
-}
-.icon-blog:before {
+.icon-text:before {
 	content: "\f1ea";
 }
 /* #endregion */

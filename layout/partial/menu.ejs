@@ -51,13 +51,13 @@
             <input id='categories' type='checkbox' hidden aria-hidden='true' tabindex='-1' checked />
 
             <label for='categories' aria-label='Menu' class='link' aria-hidden='true' tabindex='-1'>
-                <i class='icon-down'></i> <%- __('categories') %>
+                <i class='icon-arrow'></i> <%- __('categories') %>
             </label>
 
             <% site.categories.filter(category => category.posts.first().lang == page.lang).each(category => { %>
                 <li class='categories-item'>
                     <a href='<%- url_for_lang(category.path) %>' class='link group <%- page.category == category.name && 'selected' %>'>
-                        <i class='icon-blog'></i>
+                        <i class='icon-text'></i>
                         <%- titlecase(category.name) %>
                     </a>
                 </li>
