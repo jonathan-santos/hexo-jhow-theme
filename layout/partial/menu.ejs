@@ -19,7 +19,7 @@
 
         <ul>
             <li>
-                <a href='<%- url_for('/') %>' class='link <%- is_home() && 'selected' %>'>
+                <a href='<%- url_for_lang('/') %>' class='link <%- is_home() && 'selected' %>'>
                     <i class='icon-home'></i>
                     <%= __('home') %>
                 </a>
@@ -27,17 +27,24 @@
 
             <% if(!theme.noFaq) { %>
                 <li>
-                    <a href='/faq.html' class='link <%- page.title == 'faq' && 'selected' %>'>
+                    <a href='<%- url_for_lang('/faq.html') %>' class='link <%- page.title == 'faq' ? 'selected' : '' %>'>
                         <i class='icon-faq'></i>
-                        FAQ
+                        <%- __('faq') %>
                     </a>
                 </li>
             <% } %>
 
             <li>
-                <a href='/tags.html' class='link <%- page.title == 'tags' && 'selected' %>'>
+                <a href='<%- url_for_lang('/tags.html') %>' class='link <%- page.title == 'tags' ? 'selected' : '' %>'>
                     <i class='icon-tags'></i>
                     Tags
+                </a>
+            </li>
+
+            <li>
+                <a href='<%- url_for(page.lang === 'en' ? '/pt' : '/') %>' class='link <%- page.title == 'tags' && 'selected' %>'>
+                    <i class='icon-language'></i>
+                    <%- page.lang === 'en' ? 'Português' : 'English' %>
                 </a>
             </li>
 
@@ -47,9 +54,9 @@
                 <i class='icon-down'></i> <%- __('categories') %>
             </label>
 
-            <% site.categories.each(category => { %>
+            <% site.categories.filter(category => category.posts.first().lang == page.lang).each(category => { %>
                 <li class='categories-item'>
-                    <a href='<%- url_for(category.path) %>' class='link group <%- page.category == category.name && 'selected' %>'>
+                    <a href='<%- url_for_lang(category.path) %>' class='link group <%- page.category == category.name && 'selected' %>'>
                         <i class='icon-blog'></i>
                         <%- titlecase(category.name) %>
                     </a>

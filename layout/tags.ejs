@@ -5,8 +5,8 @@
 
     <div class='main-content'>
         <div class='blog-tags'>
-            <% site.tags.each(tag => { %>
-                <a href='<%- url_for(tag.path) %>' class='post-tag'>
+            <% site.tags.filter(tag => tag.posts.first().lang === page.lang).sort('name', -1).each(tag => { %>
+                <a href='<%- url_for_lang(tag.path) %>' class='post-tag'>
                     <%- titlecase(tag.name) %>
                 </a>
             <% }) %>

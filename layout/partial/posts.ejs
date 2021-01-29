@@ -1,5 +1,5 @@
 <div class='<%- !theme.wikiMode ? 'blog-posts' : 'wiki-posts' %>'>
-    <% posts.filter(post => post.indexable != false).sort('date', -1).each(post => { %>
+    <% posts.filter(post => post.indexable !== false && post.lang === page.lang).sort('date', -1).each(post => { %>
 
         <% if(!theme.wikiMode) { %>
             <%- partial('partial/blogPost', { post }) %>

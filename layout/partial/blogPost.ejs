@@ -1,11 +1,11 @@
 <div class='blog-post' class='link'>
     <div class='details-top'>
-        <a class='post-category' href='<%- url_for(post.categories.first().path) %>'><%- titlecase(post.categories.first().name) %></a>
+        <a class='post-category' href='<%- url_for_lang(post.categories.first().path) %>'><%- titlecase(post.categories.first().name) %></a>
 
         <span class='date'><%- date(post.date, config.date_format) %></span>
     </div>
         
-    <a href='<%- url_for(post.path) %>' class='link'>
+    <a href='<%- url_for_lang(post.path) %>' class='link'>
         <h2 class='title'><%- post.title %></h2>
 
         <% if (post.synopsis) { %>
@@ -17,7 +17,7 @@
         <span class='info'>Tags: </span>
         
         <% post.tags.each(tag => { %>
-            <a href='<%- url_for(tag.path) %>' class='post-tag'><%- titlecase(tag.name) %></a>
+            <a href='<%- url_for_lang(tag.path) %>' class='post-tag'><%- titlecase(tag.name) %></a>
         <% }) %>
     </div>
 </div>

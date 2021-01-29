@@ -1,15 +1,15 @@
 <main>
     <div class='area-title home'>
-        <h1 class='title'><%- config.title %></h1>
+        <h1 class='title'><%- __('title') %></h1>
 
-        <p class='description'><%- config.description %></p>
+        <p class='description'><%- __('description') %></p>
     </div>
 
     <div class='main-content <%- theme.wikiMode ? 'home-wiki' : '' %>'>
         <% if(!theme.wikiMode) { %>
             <%- partial('partial/posts', { posts: site.posts }) %>
         <% } else { %>
-            <% site.categories.sort('name').each(category => { %>
+            <% site.categories.filter(category => category.posts.first().lang == page.lang).sort('name').each(category => { %>
                 <%- partial('partial/wikiPostsCategory', { category }) %>
             <% }) %>
         <% } %>

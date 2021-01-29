@@ -1,8 +1,12 @@
+title: Título do blog
+description: Descrição do blog
 home: Início
+category: Categoria
+date: Data
 categories: Categorias
 footerText: Blog feito com HTML, CSS, <a href='https://hexo.io' target='_blank'>Hexo</a>, <i class="icon-heart"></i> e café
 curiosityOfHowWasMade: Curiosidade de como esse blog foi feito? 
-accessRepo: Acesse seu repositório
+accessRepo: Acesse o repositório
 backToTop: Voltar ao topo
 part: Parte
 tableOfContents: Índice
@@ -10,3 +14,4 @@ next: Próxima
 previous: Anterior
 postMusic: Música do Post
 hearIt: Escute ela
+faq: Perguntas frequentes

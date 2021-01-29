@@ -1,12 +1,17 @@
-home: home
-categories: categories
+title: Blog title
+description: Blog description
+home: Home
+category: Category
+date: Date
+categories: Categories
 footerText: Blog done with HTML, CSS, <a href='https://hexo.io' target='_blank'>Hexo</a>, <i class="icon-heart"></i> and coffee
 curiosityOfHowWasMade: Curious of how this blog was made? 
-accessRepo: Access it's repo
+accessRepo: Access the repository
 backToTop: Back to top
-part: part
+part: Part
 tableOfContents: Table of Contents
-next: next
-previous: previous
+next: Next
+previous: Previous
 postMusic: Music of the Post
 hearIt: Hear it
+faq: FAQ
