@@ -436,6 +436,7 @@ footer .back-to-top {
 }
 
 .main-content p {
+	line-height: 2.8rem;
 	text-align: left;
 }
 
@@ -722,168 +723,180 @@ footer .back-to-top {
 }
 /* #endregion */
 
-/* #region code */
-pre,
-.highlight {
-	background: var(--color-background-dark);
-	border-style: solid;
-	border-color: #BBB;
-	border-width: 1px 0;
-	color: var(--color-text-light);
-	line-height: 2.4rem;
-}
-
-.highlight .gutter pre,
-.gist .gist-file .gist-data .line-numbers {
-	user-select: none;
-	color: #BBB;
-	font-size: 0.85em;
-}
-
-pre,
-code {
-	font-family: Consolas, Monaco, Menlo, Consolas, monospace;
-}
+/* #region syntax highlighting */
+/**
+* Dracula Theme originally by Zeno Rocha [@zenorocha]
+* https://draculatheme.com/
+*
+* Ported for PrismJS by Albert Vallverdu [@byverdu]
+* Modified by Jonathan Santos [@pipocacafeinada] for this theme
+*/
 
 code {
-	background-color: var(--color-background-dark);
-	border-radius: 0.5rem;
-	color: var(--color-primary);
-	padding: 0 0.3em;
+	border-radius: 0.8rem;
+	padding: 0 0.4rem;
+	background-color: #282a36;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: #ff79c6;
 }
 
-pre code {
-	background: none;
-	text-shadow: none;
-}
-
-.highlight {
-	margin: 1.6rem 0;
-	padding: 0.8rem;
-	overflow-x: auto;
-	overflow-y: hidden;
-}
-
-.highlight pre {
-	border: none;
-	overflow: hidden;
-}
-
-.highlight table {
-	width: auto;
-	overflow: hidden;
-}
-
-.highlight td {
-	border: none;
+code[class*="language-"],
+pre[class*="language-"] {
 	padding: 0;
+	color: #f8f8f2;
+	background: none;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+ 
+ /* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.8rem;
+}
+ 
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #282a36;
+}
+ 
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
 }
 
-.highlight figcaption {
-	font-size: 0.85em;
-	color: var(--color-text-light);
-	line-height: 1em;
-	margin-bottom: 1em;
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #6272a4;
 }
 
-.highlight figcaption:before,
-.highlight figcaption:after {
-	content: "";
-	display: table;
+.token.punctuation {
+	color: #f8f8f2;
 }
 
-.highlight figcaption:after {
-	clear: both;
+.namespace {
+	opacity: .7;
 }
 
-.highlight figcaption a {
-	float: right;
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #ff79c6;
 }
 
-.highlight .gutter pre {
+.token.boolean,
+.token.number {
+	color: #bd93f9;
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.function,
+.token.inserted {
+	color: #50fa7b;
+}
+
+.token.string,
+.token.attr-value {
+	color: #F1FA8C;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.class-name {
+	color: #8be9fd;
+}
+
+.token.keyword {
+	color: #ff79c6;
+}
+
+.token.regex,
+.token.important {
+	color: #ffb86c;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+/*********************************************************
+* Line numbers */
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+	white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.line-numbers-rows > span {
+	display: block;
+	counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+	content: counter(linenumber);
+	color: #999;
+	display: block;
+	padding-right: 0.8em;
 	text-align: right;
-	padding-right: 20px;
-}
-
-.highlight .line {
-	height: 2.4rem;
-}
-
-.highlight .line.marked {
-	background: var(--color-secondary);
-}
-
-pre .comment {
-	color: #BBB;
-}
-
-pre .title {
-	color: var(--color-secondary);
-}
-
-pre .variable,
-pre .attribute,
-pre .post-tag,
-pre .regexp,
-pre .ruby .constant,
-pre .xml .post-tag .title,
-pre .xml .pi,
-pre .xml .doctype,
-pre .tag .name,
-pre .css .id,
-pre .css .class,
-pre .css .pseudo {
-	color: var(--color-primary);
-}
-
-pre .number,
-pre .preprocessor,
-pre .built_in,
-pre .literal,
-pre .params,
-pre .constant {
-	color: var(--color-primary);
-}
-
-pre .class,
-pre .meta,
-pre .ruby .class .title,
-pre .css .rules .attribute {
-	color: var(--color-secondary);
-}
-
-pre .string,
-pre .value,
-pre .inheritance,
-pre .header,
-pre .ruby .symbol,
-pre .xml .cdata {
-	color: var(--color-secondary);
-}
-
-pre .css .hexcolor {
-	color: var(--color-secondary);
-}
-
-pre .function,
-pre .python .decorator,
-pre .python .title,
-pre .ruby .function .title,
-pre .ruby .title .keyword,
-pre .perl .sub,
-pre .javascript .title,
-pre .coffeescript .title {
-	color: var(--color-secondary);
-}
-
-pre .keyword,
-pre .javascript .function {
-	color: var(--color-primary);
-}
-
-.bash .code .line::before  {
-		content: "$ ";
-		user-select: none;
-		color: var(--color-primary);
 }
 /* #endregion */
