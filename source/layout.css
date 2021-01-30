@@ -217,13 +217,22 @@ a:focus {
 	}
 
 @media (min-width: 600px) {
+	.menu {
+		max-width: 30%;
+		min-width: 30rem;
+	}
+
+	.menu .content {
+		width: 100%;
+	}
+
 	.menu .backdrop {
 		display: none;
 	}
 
-	.menu .content {
-		max-width: 30%;
-		min-width: 40rem;
+	#menu:checked ~ main,
+	#menu:checked ~ footer {
+		width: 70%;
 	}
 }
 /* #endregion */
