@@ -1,10 +1,12 @@
 <main class='post'>
     <div class='area-title <%- page.synopsis == null ? 'min' : '' %>'>
         <h1 class='title'>
-            <%- page.title %>
-
             <% if(page.part) { %>
-                - <%- __('part') %> <%- page.part %>
+                <%- page.title %>:
+                <br>
+                <%- __('part') %> <%- page.part %>
+            <% } else { %>
+                <%- page.title %>
             <% } %>
         </h1>
 

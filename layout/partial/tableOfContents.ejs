@@ -1,14 +1,12 @@
 <h2><%- __('tableOfContents') %></h2>
 
 <ul class='parts'>
-    <% Array(page.numberOfParts).fill(0).forEach((part, i) => { %>
-        <% i++ %>
-
+    <% site.posts.filter(post => post.title === page.title).each(post => { %>
         <li>
-            <% if(i != page.part) { %>
-                <a href='../<%- i %>'><%- __('part') %> <%- i %></a>
+            <% if(post.part === page.part) { %>
+                <span><%- __('part') %> <%- page.part %> - <%- page.synopsis %></span>
             <% } else { %>
-                <span><%- __('part') %> <%- i %></span>
+                <a href='../<%- post.part %>'><%- __('part') %> <%- post.part %> - <%- post.synopsis %></a>
             <% } %>
         </li>
     <% }) %>
