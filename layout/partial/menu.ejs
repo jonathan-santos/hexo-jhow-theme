@@ -41,12 +41,16 @@
                 </a>
             </li>
 
-            <li>
-                <a href='<%- url_for(page.lang === 'en' ? '/pt' : '/') %>' class='link <%- page.title == 'tags' && 'selected' %>'>
-                    <i class='icon-language'></i>
-                    <%- page.lang === 'en' ? 'Português' : 'English' %>
-                </a>
-            </li>
+            <% if (Array.isArray(config.language)) { %>
+                <% config.language.filter(lang => lang != page.lang).forEach(lang => { %>
+                    <li>
+                        <a href='<%- url_for(lang === config.language[0] ? '/' : `/${lang}`) %>' class='link'>
+                            <i class='icon-language'></i>
+                            <%- __(lang) %>
+                        </a>
+                    </li>
+                <% }) %>
+            <% } %> 
 
             <input id='categories' type='checkbox' hidden aria-hidden='true' tabindex='-1' checked />
 
