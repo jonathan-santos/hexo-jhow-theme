@@ -4,7 +4,7 @@
     </h2>
 
     <div class='posts-line'>
-        <% posts.filter(post => post.lang === page.lang && (post.part === undefined || post.part === 1)).sort('date', -1).each(post => { %>
+        <% category.posts.filter(post => post.lang === page.lang && (post.part === undefined || post.part === 1)).sort('date', -1).each(post => { %>
             <%- partial('partial/wikiPost', { post }) %>
         <% }) %>
 
