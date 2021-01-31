@@ -1,0 +1,25 @@
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta name='description' content='<%- page.synopsis || __('description') %>'>
+    <title>
+        <%- __('title') %>
+        <%if (page.title != null && page.title.length > 0) { %>
+        - <%- page.title %>
+        <% } %>
+    </title>
+
+    <link rel='stylesheet' href='<%- url_for('/layout.css') %>'>
+    <link rel='preload' href='<%- url_for('/icomoon/fonts.ttf?a3zlv3') %>' as='font' type='font/ttf' crossorigin='anonymous'>
+
+    <style>
+        :root {
+            --color-primary: <%=theme.primaryColor %>;
+            --color-text-light: <%=theme.textLightColor %>;
+            --color-text-dark: <%=theme.textDarkColor %>;
+            --color-background-light: <%=theme.backgroundLightColor %>;
+            --color-background-dark: <%=theme.backgroundDarkColor %>;
+        }
+    </style>
+</head>

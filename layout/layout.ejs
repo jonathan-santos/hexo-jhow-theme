@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <html lang='<%- page.lang %>'>
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <meta name='description' content='<%- page.synopsis || __('description') %>'>
-    <title>
-        <%- __('title') %>
-        <%if (page.title != null && page.title.length > 0) { %>
-        - <%- page.title %>
-        <% } %>
-    </title>
 
-    <link rel='apple-touch-icon' sizes='180x180' href='/img/apple-touch-icon.png'>
-    <link rel='icon' type='image/png' sizes='32x32' href='/img/favicon-32x32.png'>
-    <link rel='icon' type='image/png' sizes='16x16' href='/img/favicon-16x16.png'>
-    <link rel='manifest' href='/site.webmanifest'>
-    
-    <link rel='stylesheet' href='<%- url_for('/layout.css') %>'>
-    <link rel='preload' href='<%- url_for('/icomoon/fonts.ttf?a3zlv3') %>' as='font' type='font/ttf' crossorigin='anonymous'>
-
-    <style>
-        :root {
-            --color-primary: <%= theme.primaryColor %>;
-            --color-text-light: <%= theme.textLightColor %>;
-            --color-text-dark: <%= theme.textDarkColor %>;
-            --color-background-light: <%= theme.backgroundLightColor %>;
-            --color-background-dark: <%= theme.backgroundDarkColor %>;
-        }
-    </style>
-</head>
+<%- partial('partial/head') %>
 
 <body>
     <span id='top'></span>
 
     <% if(!is_home()) { %>
-        <a href='<%- url_for_lang('/') %>' class='home-button'>
-            <i class='icon-home'></i>
-        </a>
+    <a href='<%- url_for_lang('/') %>' class='home-button'>
+        <i class='icon-home'></i>
+    </a>
     <% } %>
 
     <%- partial('partial/menu') %>
@@ -45,10 +17,11 @@
     <%- body %>
 
     <footer>
-        <p><%- config.footerText || __('footerText') %></p>
+        <p><%- __('footerText') %></p>
 
         <% if(!config.notShowRepo && config.repo != null) { %>
-            <p><%= __('curiosityOfHowWasMade') %> <br> <a href='<%- url_for(config.repo) %>' target='_blank' rel='noreferrer'><%= __('accessRepo') %></a></p>
+        <p><%= __('curiosityOfHowWasMade') %> <br> <a href='<%- url_for(config.repo) %>' target='_blank'
+                rel='noreferrer'><%= __('accessRepo') %></a></p>
         <% } %>
 
         <a href='#top' class='back-to-top'>
@@ -56,4 +29,5 @@
         </a>
     </footer>
 </body>
+
 </html>
