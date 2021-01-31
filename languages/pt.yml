@@ -4,7 +4,7 @@ home: Início
 category: Categoria
 date: Data
 categories: Categorias
-footerText: Feito com HTML, CSS, <a href='https://hexo.io' target='_blank'>Hexo</a>, <i class="icon-heart"></i> e café
+footerText: Feito com HTML, CSS, <a href='https://hexo.io' target='_blank' rel='noreferrer'>Hexo</a>, <i class="icon-heart"></i> e café
 curiosityOfHowWasMade: Curiosidade de como esse site foi feito?
 accessRepo: Acesse o repositório
 backToTop: Voltar ao topo
