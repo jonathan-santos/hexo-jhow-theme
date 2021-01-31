@@ -93,7 +93,7 @@ a:focus {
 	#menu:checked ~ .menu-button .icon-close {
 		display: initial;
 	}
-	
+
 .home-button {
     left: 1.6rem;
     border-radius: 0.4rem;
@@ -161,6 +161,7 @@ a:focus {
 
 	.menu .logo img {
 		width: 100%;
+		object-fit: contain;
 	}
 
 .menu .title {
@@ -177,7 +178,7 @@ a:focus {
 	padding: 0.8rem 1.6rem;
 	font-size: 2rem;
 	text-decoration: none;
-	text-shadow: 0.1rem 0.1rem 0.1rem var(--color-background-dark);
+	font-weight: bold;
 	display: flex;
 	align-items: center;
 }
@@ -350,7 +351,7 @@ a:focus {
 	.post-category:hover,
 	.post-tag:active,
 	.post-tag:hover {
-		filter: brightness(75%);	
+		filter: brightness(75%);
 	}
 
 .post-category {
@@ -516,7 +517,7 @@ footer .back-to-top {
 	.main-content .post-music p {
 		margin: 0.8rem 0;
 	}
-	
+
 	.main-content .post-music a {
 		color: var(--color-primary);
 		font-weight: bold;
@@ -564,7 +565,7 @@ footer .back-to-top {
 .blog-post .title {
 	font-size: 2.4rem;
 }
-  
+
 .blog-post .synopsis {
 	font-size: 1.8rem;
 }
@@ -573,7 +574,7 @@ footer .back-to-top {
 	margin-top: 1.6rem;
 }
 /* #endregion */
-  
+
 /* #region wiki-post */
 .wiki-posts {
 	display: flex;
@@ -582,7 +583,7 @@ footer .back-to-top {
 	flex-wrap: wrap;
 	gap: 1.6rem;
 }
-  
+
 .wiki-posts-category {
 	padding: 1.6rem 0;
 	overflow-x: auto;
@@ -628,7 +629,7 @@ footer .back-to-top {
 	flex-direction: column;
 	overflow: hidden;
 }
-  
+
 .wiki-post .link {
 	flex: 1;
 	padding: 0.8rem;
@@ -656,7 +657,7 @@ footer .back-to-top {
 	gap: 0.4rem;
 }
 /* #endregion */
-  
+
 /* #region blog-tags */
 .blog-tags {
 	display: flex;
@@ -670,7 +671,7 @@ footer .back-to-top {
 		font-size: 3.6rem;
 	}
 /* #endregion */
-  
+
 /* #region icomoon */
 @font-face {
 	font-family: 'icomoon';
@@ -769,7 +770,7 @@ pre[class*="language-"] {
 	-ms-hyphens: none;
 	hyphens: none;
 }
- 
+
  /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
@@ -777,12 +778,12 @@ pre[class*="language-"] {
 	overflow: auto;
 	border-radius: 0.8rem;
 }
- 
+
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #282a36;
 }
- 
+
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
