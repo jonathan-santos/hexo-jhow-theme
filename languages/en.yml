@@ -4,8 +4,8 @@ home: Home
 category: Category
 date: Date
 categories: Categories
-footerText: Blog done with HTML, CSS, <a href='https://hexo.io' target='_blank'>Hexo</a>, <i class="icon-heart"></i> and coffee
-curiosityOfHowWasMade: Curious of how this blog was made? 
+footerText: Built with HTML, CSS, <a href='https://hexo.io' target='_blank'>Hexo</a>, <i class="icon-heart"></i> and coffee
+curiosityOfHowWasMade: Curious of how this website was made? 
 accessRepo: Access the repository
 backToTop: Back to top
 part: Part
