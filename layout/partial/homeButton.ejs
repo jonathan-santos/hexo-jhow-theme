@@ -1,5 +1,5 @@
 <% if(!is_home()) { %>
-    <a href='<%- url_for_lang('/') %>' class='home-button'>
+    <a href='<%- url_for_lang('/') %>' class='home-button' aria-label='<%- __('goToHome') %>'>
         <i class='icon-home'></i>
     </a>
 <% } %>
