@@ -1,0 +1,9 @@
+<% if(page.id && site.posts.some(post => post.id === page.id && post.lang != page.lang)) { %>
+    <div class='other-langs'>
+        <ul>
+            <% site.posts.filter(post => post.id === page.id && post.lang != page.lang && (!page.part || post.part === page.part)).sort('lang').each(post => { %>
+                <li><%- __(`readIn${post.lang}`) %> : <a href='<%- url_for(post.path) %>'><%- post.title %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>

@@ -1,0 +1,14 @@
+<% if(page.postMusicLink) { %>
+    <div class='post-music'>
+        <h3>
+            <i class='icon-music'></i>
+            <%- __('postMusic') %>
+        </h3>
+
+        <p><%- page.postMusicText %></p>
+
+        <a href='<%- page.postMusicLink %>' target='_blank' rel='noreferrer'>
+            <%- __('hearIt') %>...
+        </a>
+    </div>
+<% } %>

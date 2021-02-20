@@ -1,33 +1,16 @@
 <!DOCTYPE html>
 <html lang='<%- page.lang %>'>
+    <%- partial('partial/head') %>
 
-<%- partial('partial/head') %>
+    <body>
+        <span id='top'></span>
 
-<body>
-    <span id='top'></span>
+        <%- partial('partial/homeButton') %>
 
-    <% if(!is_home()) { %>
-    <a href='<%- url_for_lang('/') %>' class='home-button'>
-        <i class='icon-home'></i>
-    </a>
-    <% } %>
+        <%- partial('partial/menu') %>
 
-    <%- partial('partial/menu') %>
+        <%- body %>
 
-    <%- body %>
-
-    <footer>
-        <p><%- __('footerText') %></p>
-
-        <% if(!config.notShowRepo && config.repo != null) { %>
-        <p><%= __('curiosityOfHowWasMade') %> <br> <a href='<%- url_for(config.repo) %>' target='_blank'
-                rel='noreferrer'><%= __('accessRepo') %></a></p>
-        <% } %>
-
-        <a href='#top' class='back-to-top'>
-            <%= __('backToTop') %> <i class='icon-arrow'></i>
-        </a>
-    </footer>
-</body>
-
+        <%- partial('partial/footer') %>
+    </body>
 </html>

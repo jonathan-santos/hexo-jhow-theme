@@ -1,0 +1,13 @@
+<footer>
+    <p><%- __('footerText') %></p>
+
+    <% if(!config.notShowRepo && config.repo != null) { %>
+        <p><%= __('curiosityOfHowWasMade') %> <br> <a href='<%- url_for(config.repo) %>' target='_blank' rel='noreferrer'>
+            <%= __('accessRepo') %></a>
+        </p>
+    <% } %>
+
+    <a href='#top' class='back-to-top'>
+        <%= __('backToTop') %> <i class='icon-arrow'></i>
+    </a>
+</footer>

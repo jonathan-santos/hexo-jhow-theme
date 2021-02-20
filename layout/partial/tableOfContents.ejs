@@ -1,13 +1,15 @@
-<h2><%- __('tableOfContents') %></h2>
+<% if(page.part) { %>
+    <h2><%- __('tableOfContents') %></h2>
 
-<ul class='parts'>
-    <% site.posts.filter(post => post.title === page.title).sort('part').each(post => { %>
-        <li>
-            <% if(post.part === page.part) { %>
-                <span><%- __('part') %> <%- page.part %> - <%- page.synopsis %></span>
-            <% } else { %>
-                <a href='../<%- post.part %>'><%- __('part') %> <%- post.part %> - <%- post.synopsis %></a>
-            <% } %>
-        </li>
-    <% }) %>
-</ul>
+    <ul class='parts'>
+        <% site.posts.filter(post => post.id === page.id && post.lang === page.lang).sort('part').each(post => { %>
+            <li>
+                <% if(post.part === page.part) { %>
+                    <span><%- __('part') %> <%- page.part %> - <%- page.title %></span>
+                <% } else { %>
+                    <a href='../<%- post.part %>'><%- __('part') %> <%- post.part %> - <%- post.title %></a>
+                <% } %>
+            </li>
+        <% }) %>
+    </ul>
+<% } %>

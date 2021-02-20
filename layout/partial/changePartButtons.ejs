@@ -1,0 +1,11 @@
+<% if(page.part) { %>
+    <div class='part-buttons'>
+        <% if(Number(page.part) > 1) { %>
+            <a class='previous' href='../<%= page.part - 1 %>'><%- __('previous') %></a>
+        <% } %>
+
+        <% if(Number(page.part) < site.posts.filter(post => post.id === page.id && post.lang === page.lang).length) { %>
+            <a class='next' href='../<%= page.part + 1 %>'><%- __('next') %></a>
+        <% } %>
+    </div>
+<% } %>

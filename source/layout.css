@@ -548,6 +548,12 @@ footer .back-to-top {
 	max-width: 100%;
 }
 
+.main-content .other-langs {
+	border-bottom: var(--border-thin);
+	padding-bottom: 1.6rem;
+	text-align: center;
+}
+
 .main-content .part-buttons {
 	border-top: var(--border-thin);
 	padding-top: 0.8rem;

@@ -9,10 +9,6 @@
         <%if (page.title != null && page.title.length > 0) { %>
             - <%- page.title %>
         <% } %>
-
-        <%if (page.part) { %>
-            - <%- __('part') %> <%- page.part %>
-        <% } %>
     </title>
 
     <link rel='stylesheet' href='<%- url_for('/layout.css') %>'>
