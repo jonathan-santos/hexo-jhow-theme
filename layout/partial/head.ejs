@@ -5,8 +5,13 @@
     <meta name='description' content='<%- page.synopsis || __('description') %>'>
     <title>
         <%- __('title') %>
+
         <%if (page.title != null && page.title.length > 0) { %>
-        - <%- page.title %>
+            - <%- page.title %>
+        <% } %>
+
+        <%if (page.part) { %>
+            - <%- __('part') %> <%- page.part %>
         <% } %>
     </title>
 
