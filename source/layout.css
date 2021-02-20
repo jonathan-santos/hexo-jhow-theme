@@ -522,14 +522,15 @@ footer .back-to-top {
 	text-align: left;
 }
 
-.main-content a {
-	border-radius: 0.4rem;
-	background-color: var(--color-background);
-}
-
 .main-content ul,
 .main-content ol {
 	padding-left: 2.4rem;
+}
+
+.main-content p a,
+.main-content ul a {
+	border-radius: 0.4rem;
+	background-color: var(--color-background);
 }
 
 .main-content li {
