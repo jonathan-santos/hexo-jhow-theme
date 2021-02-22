@@ -8,7 +8,7 @@
             <div class='group'>
                 <span class='info'><%- __('category') %>: </span>
                 
-                <a class='post-category' href='<%- url_for(page.categories.first().path) %>'>
+                <a class='post-category' href='<%- url_for_lang(page.categories.first().path) %>'>
                     <%- titlecase(page.categories.first().name) %>
                 </a>
             </div>
@@ -23,7 +23,7 @@
             <span class='info'>Tags:</span>
 
             <% page.tags.each(tag => { %>
-                <a href='<%- url_for(tag.path) %>' class='post-tag'><%- titlecase(tag.name) %></a>
+                <a href='<%- url_for_lang(tag.path) %>' class='post-tag'><%- titlecase(tag.name) %></a>
             <% }) %>
         </div>
     </div>

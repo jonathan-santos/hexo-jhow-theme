@@ -11,3 +11,4 @@ backgroundDarkColor: '#1A2A3A'
 
 # Images
 logo: /img/logo.png
+logoSize: 192 # In px
